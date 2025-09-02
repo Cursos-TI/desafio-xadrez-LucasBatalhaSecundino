@@ -1,5 +1,23 @@
 #include <stdio.h>
  
+void movertorre(int casas) {
+    if (casas > 0)
+    {
+        printf("Direita!\n");
+        movertorre(casas - 1);
+    }
+}
+    void moverrainha(int casas){
+    if (casas > 0)
+    {
+        printf("Esquerda!\n");
+        moverrainha(casas - 1);
+    }
+    
+}
+    
+
+
 int main() {
     
     char peca, direcao;
@@ -8,11 +26,8 @@ int main() {
     printf("Escolha uma peca (T - Torre, B - Bispo, R - Rainha, C - Cavalo): ");
     scanf(" %c", &peca);
     if (peca == 'T') {
-        printf("Você escolheu a torre.\n");
-        for (i = 0; i <=5; i++)
-        {
-            printf("Direita\n");
-        }
+        movertorre(5);
+
         
     } else if (peca == 'B') {
         printf("Você escolheu o bispo. Ele se move 8 casas em qualquer diagonal\n");
@@ -48,13 +63,7 @@ int main() {
        
 
     } else if (peca == 'R') {
-        printf("Você escolheu a rainha.\n");
-        i = 0;
-        while (i <= 5)
-        {
-            printf("Esquerda\n");
-            i++;
-        }
+        moverrainha(8);
         
     } else if (peca == 'C')
     {
